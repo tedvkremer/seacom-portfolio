@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Rock+Salt:400,600,700&display=swap');
+
+@font-face {
+    font-family: 'Varino';
+    src: url('Varino-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --sc-text-color: #e2e8f0;
+    --sc-company-color: #00b0f0;
+    --sc-subtitle-color: #dedede;
+    --sc-red-color: #f43971;
+    --sc-main-font-family: 'Comfortaa', cursive;
+    --sc-logo-font-family: 'Varino', sans-serif;
+    --sc-signature-font-family: 'Rock Salt', cursive;
+    --sc-button-font-family: 'Varino', sans-serif;
+    --sc-story-num-font-family: 'Varino', sans-serif;
+    --sc-padding-container: 3.5rem 0;
+    --sc-radius-large: 2rem;
+    --sc-radius-medium: 1rem;
+    --sc-border-card: 1px solid rgba(148, 163, 184, 0.1);
+    --sc-blur-bg: blur(10px);
+    --sc-shadow-blue: 0 0 30px rgba(59, 130, 246, 0.3);
+    --sc-shadow-blue-light: 0 0 20px rgba(59, 130, 246, 0.3);
+    --sc-gradient-company: linear-gradient(135deg, var(--sc-company-color) 0%, #8b5cf6 50%, #ec4899 100%);
+    --sc-gradient-blue: linear-gradient(135deg, #3b82f6 0%, #ec4899 100%);
+    --sc-bg-card: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.6) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--sc-main-font-family);
+    line-height: 1.6;
+    color: var(--sc-text-color);
+    background: rgba(21, 24, 30, 0.95);
+    min-height: 100vh;
+    min-width: 425px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+    z-index: -1;
+    animation: backgroundShift 20s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/*************************************
+  Header
+ *************************************/
+
+.header {
+    padding: 3rem 0 0;
+}
+
+.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: auto;
+    height: 6rem;
+}
+
+.logo-section:hover .logo {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 12px 24px rgba(59, 130, 246, 0.5));
+}
+
+.company-name {
+    font-family: var(--sc-logo-font-family);
+    font-size: 2.1rem;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    color: var(--sc-company-color);
+    background: var(--sc-gradient-company);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: var(--sc-shadow-blue);
+    white-space: nowrap;
+}
+
+.company-tagline {
+    font-family: var(--sc-logo-font-family);
+    font-size: 0.8rem;
+    color: var(--sc-subtitle-color);
+    letter-spacing: 5px;
+    padding-left: 3px
+}
+
+/*************************************
+  Story Section
+ *************************************/
+
+.story {
+    padding: var(--sc-padding-container);
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 3.5vw;
+}
+
+.story-card {
+    background: var(--sc-bg-card);
+    padding: 3.5rem;
+    border-radius: var(--sc-radius-medium);
+    border: var(--sc-border-card);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: var(--sc-blur-bg);
+}
+
+.story-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+    opacity: 0.8;
+}
+
+.story-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.story-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(59, 130, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.story-card:hover::after {
+    opacity: 1;
+    animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+.story-number {
+    font-family: var(--sc-story-num-font-family);
+    font-size: 3rem;
+    font-weight: 700;
+    background: var(--sc-gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+    text-shadow: var(--sc-shadow-blue-light);
+}
+
+.story-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.story-card p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    line-height: 1.8;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/*************************************
+  Contact Section
+ *************************************/
+
+.contact {
+    padding: var(--sc-padding-container);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.contact-header {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-header>p {
+    max-width: 700px;
+}
+
+.contact-info {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    align-items: center;
+    gap: 2.5rem;
+    padding: 3rem;
+    background: #0a0a0a33;
+    border-radius: var(--sc-radius-medium);
+    border: var(--sc-border-card);
+    backdrop-filter: var(--sc-blur-bg);
+}
+
+.contact-employee {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.contact-signature {
+    font-family: var(--sc-signature-font-family);
+    font-weight: normal;
+    font-size: 1.65rem;
+    color: var(--sc-text-color);
+}
+
+.contact-signature>.accent {
+    color: var(--sc-red-color);
+}
+
+.contact-employee>.contact-signature {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-organization {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.contact-organization>.company-name {
+    font-size: 1.5rem;
+}
+
+.contact-organization>.company-tagline {
+    font-size: 0.75rem;
+    letter-spacing: 1.75px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-item a,
+.contact-item span {
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    text-decoration: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+    background: var(--sc-gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: scale(1.05);
+}
+
+.contact-item>.phone {
+    padding: 9px 0 3px;
+}
+
+.btn-resume {
+    font-family: var(--sc-button-font-family);
+    display: inline-block;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+    color: white;
+    padding: 1.25rem 7rem;
+    border-radius: var(--sc-radius-large);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+        0 10px 30px rgba(59, 130, 246, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-resume::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-resume:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 15px 40px rgba(59, 130, 246, 0.4),
+        0 0 40px rgba(139, 92, 246, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-resume:hover::before {
+    left: 100%;
+}
+
+/*************************************
+  Tablet
+ *************************************/
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 3rem;
+    }
+
+    .company-name {
+        font-size: 1.75rem;
+    }
+
+    .company-tagline {
+        font-size: 0.75em;
+        letter-spacing: 3.3px;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .story-card {
+        padding: 2rem;
+    }
+
+    .contact-signature {
+        font-size: 2.2rem;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-item a,
+    .contact-item span {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+
+    .logo-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+/*************************************
+  Mobile
+ *************************************/
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .story-card {
+        padding: 1.5rem;
+    }
+
+    .company-name {
+        font-size: 1.8rem;
+        letter-spacing: -1px;
+    }
+
+    .company-tagline {
+        font-size: 0.855rem;
+        letter-spacing: 1px;
+    }
+
+    .contact-signature {
+        font-size: 1.8rem;
+    }
+}
