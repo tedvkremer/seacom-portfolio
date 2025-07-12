@@ -77,7 +77,7 @@ body::before {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 4rem;
 }
 
 /*************************************
@@ -287,11 +287,6 @@ body::before {
 
 .contact-signature>.accent {
     color: var(--sc-red-color);
-}
-
-.contact-employee>.contact-signature {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
 }
 
 .contact-organization {
