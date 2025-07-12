@@ -77,7 +77,7 @@ body::before {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--sc-padding-container);
+    padding: 0 4rem;
 }
 
 /*************************************
@@ -93,15 +93,17 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    flex-direction: row;;
+    gap: 0;
 }
 
 .logo {
     width: auto;
     height: 6rem;
+    padding: 5px;
 }
 
-.logo-section:hover .logo {
+.logo:hover {
     transform: scale(1.1) rotate(5deg);
     filter: drop-shadow(0 12px 24px rgba(59, 130, 246, 0.5));
 }
@@ -110,7 +112,7 @@ body::before {
     font-family: var(--sc-logo-font-family);
     font-size: 2.1rem;
     letter-spacing: 2px;
-    line-height: 1.1;
+    line-height: 1em;
     color: var(--sc-company-color);
     background: var(--sc-gradient-company);
     -webkit-background-clip: text;
@@ -125,6 +127,7 @@ body::before {
     font-size: 0.8rem;
     color: var(--sc-subtitle-color);
     letter-spacing: 5px;
+    padding-left: 3px
 }
 
 /*************************************
@@ -278,7 +281,8 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0;
+    gap: 5px;
+    overflow: hidden;
 }
 
 .contact-signature {
@@ -297,21 +301,24 @@ body::before {
     flex-direction: column;
     align-items: center;
     gap: 0;
+    overflow: hidden;
 }
 
 .contact-organization>.company-name {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .contact-organization>.company-tagline {
     font-size: 0.75rem;
-    letter-spacing: 1.75px;
+    letter-spacing: 1.2px;
+    padding-left: 1px;
 }
 
 .contact-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 3px;
 }
 
 .contact-item a,
@@ -384,7 +391,7 @@ body::before {
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 3rem;
+        padding: 0 2rem;
     }
 
     .company-name {
@@ -408,18 +415,19 @@ body::before {
     .contact-info {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 2rem;
     }
 
     .contact-item a,
     .contact-item span {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         line-height: 1.5rem;
     }
 
     .logo-section {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
+        gap: 0;
     }
 }
 
