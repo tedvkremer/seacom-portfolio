@@ -12,8 +12,8 @@
     --sc-blur-bg: blur(10px);
     --sc-border-card: 1px solid rgba(148, 163, 184, 0.1);
     --sc-company-color: #00b0f0;
-    --sc-gradient-blue: linear-gradient(135deg, #3b82f6 0%, #ec4899 100%);
-    --sc-gradient-company: linear-gradient(135deg, var(--sc-company-color) 0%, #8b5cf6 50%, #ec4899 100%);
+    --sc-gradient-blue: linear-gradient(135deg, var(--sc-company-color) 0%, #8b5cf6 50%, #ec4899 100%);
+    --sc-hero-gradient-blue: linear-gradient(135deg, rgba(59, 130, 246, 0.7) 0%, rgba(59, 130, 246, 0.9) 30%, #8b5cf6 70%, rgba(236, 72, 153, 0.5) 100%);
     --sc-logo-font-family: 'Varino', sans-serif;
     --sc-main-font-family: 'Comfortaa', cursive;
     --sc-padding-container: 3.5rem 0;
@@ -68,6 +68,7 @@ body::before {
     0%, 100% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.8;
     }
@@ -108,7 +109,7 @@ body::before {
 }
 
 .company-name {
-    background: var(--sc-gradient-company);
+    background: var(--sc-gradient-blue);
     background-clip: text;
     color: var(--sc-company-color);
     font-family: var(--sc-logo-font-family);
@@ -135,10 +136,10 @@ body::before {
 
 .hero {
     align-items: center;
-    background: var(--sc-gradient-blue);
+    background: var(--sc-hero-gradient-blue);
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin: 2rem auto 0;
     padding: var(--sc-padding-container);
     width: 100%;
 }
@@ -147,7 +148,7 @@ body::before {
     color: var(--sc-text-color);
     font-family: var(--sc-main-font-family);
     font-size: 1.35rem;
-    line-height: 1.7;
+    line-height: 1.5;
     margin: 0 auto;
     max-width: 900px;
     overflow: hidden;
@@ -226,6 +227,7 @@ body::before {
     0% {
         transform: translateX(-100%) translateY(-100%) rotate(45deg);
     }
+
     100% {
         transform: translateX(100%) translateY(100%) rotate(45deg);
     }
