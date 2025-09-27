@@ -1,0 +1,81 @@
+div.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+div.carousel div.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+div.carousel div.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: transform 700ms ease-in-out;
+  will-change: transform;
+}
+
+div.carousel div.carousel-slide:nth-child(1) {
+  transform: translateX(0%);
+}
+
+div.carousel div.carousel-slide:nth-child(2) {
+  transform: translateX(100%);
+}
+
+div.carousel div.carousel-slide:nth-child(3) {
+  transform: translateX(100%);
+}
+
+div.carousel div.carousel-slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background-color:transparent;
+}
+
+div.carousel div.carousel-indicators {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 20;
+}
+
+div.carousel button.carousel-dot {
+  cursor: pointer;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  border-width: 0;
+  transition: background-color 0.15s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+div.carousel button.carousel-dot-active {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  border-width: 0;
+  transition: background-color 0.15s ease-in-out;
+  background-color: white;
+}
+
+div.carousel button.carousel-dot:focus, button.carousel-dot-active:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+  outline: none;
+}
