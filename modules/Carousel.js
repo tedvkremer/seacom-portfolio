@@ -1,6 +1,10 @@
 const $  = (selector, node = document) => node.querySelector(selector);
 const $$ = (selector, node = document) => node.querySelectorAll(selector);
 
+/*************************************
+  Carousel
+ *************************************/
+
 export default class Carousel {
   #id         = 0;
   #slides     = [];
