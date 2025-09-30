@@ -463,10 +463,6 @@ p {
     padding: 0 2rem;
   }
 
-  .story-grid {
-    grid-template-columns: repeat(auto-fit, minmax(311px, 1fr));
-  }
-
   .company-name {
     font-size: 1.75rem;
   }
@@ -567,6 +563,10 @@ p {
   p {
     font-size: 1rem;
     line-height: 1.6;
+  }
+
+  .story-grid {
+    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
   }
 
   .container {
