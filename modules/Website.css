@@ -146,7 +146,7 @@ p {
  *************************************/
 
 .hero {
-  height: 14rem;
+  height: 17rem;
 }
 
 .hero .carousel-container {
@@ -571,10 +571,6 @@ p {
 
   .container {
     padding: 0 1rem;
-  }
-
-  .hero {
-    height: 17rem;
   }
 
   .hero-contents {
