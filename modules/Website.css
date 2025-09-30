@@ -52,7 +52,6 @@ body {
   color: var(--sc-text-color);
   font-family: var(--sc-main-font-family);
   min-height: 100vh;
-  min-width: 425px;
   position: relative;
 }
 
@@ -89,7 +88,7 @@ p {
 .container {
   margin: 0 auto;
   padding: 0 4rem;
-  max-width: 1536px
+  max-width: 1536px;
 }
 
 /*************************************
@@ -106,6 +105,7 @@ p {
   flex-direction: row;
   gap: 0;
   justify-content: center;
+  overflow: hidden;
 }
 
 .logo {
@@ -463,6 +463,10 @@ p {
     padding: 0 2rem;
   }
 
+  .story-grid {
+    grid-template-columns: repeat(auto-fit, minmax(311px, 1fr));
+  }
+
   .company-name {
     font-size: 1.75rem;
   }
@@ -501,8 +505,8 @@ p {
     line-height: 1.6;
   }
 
-  .hero {
-    height: 14rem;
+  .hero-contents {
+    margin: -1rem 2rem 2rem;
   }
 
   .logo-section {
@@ -563,6 +567,10 @@ p {
   p {
     font-size: 1rem;
     line-height: 1.6;
+  }
+
+  .container {
+    padding: 0 1rem;
   }
 
   .hero {
