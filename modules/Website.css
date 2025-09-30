@@ -51,9 +51,8 @@ body {
   background: rgba(21, 24, 30, 0.95);
   color: var(--sc-text-color);
   font-family: var(--sc-main-font-family);
-  line-height: 1.6;
   min-height: 100vh;
-  min-width: 100%;
+  min-width: 425px;
   position: relative;
 }
 
@@ -150,12 +149,13 @@ p {
   background: var(--sc-hero-gradient-blue);
   padding: 0;
   width: 100%;
-  height: 17rem;
+  height: 18rem;
 }
 
 .hero-contents {
-  max-width: 1024px;
-  margin: -2rem 2rem 0;
+  max-width: 768px;
+  margin: 1rem 2rem 2rem;
+  text-align: center;
 }
 
 /*************************************
@@ -169,8 +169,8 @@ p {
 
 .story-grid {
   display: grid;
-  gap: 2vw;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .story-card {
@@ -437,10 +437,6 @@ p {
     line-height: 1.6;
   }
 
-  .hero {
-    height: 15rem;
-  }
-
   .container {
     padding: 0 2rem;
   }
@@ -455,7 +451,7 @@ p {
   }
 
   .story-card {
-    padding: 2rem;
+    padding: 2rem 1rem;
   }
 
   .story-number {
@@ -503,7 +499,7 @@ p {
   }
 
   .company-tagline {
-    font-size: 0.83rem;
+    font-size: 0.8rem;
     letter-spacing: 1px;
   }
 
@@ -525,7 +521,7 @@ p {
   }
 
   .contact-info {
-    gap: 3rem;
+    gap: 2rem;
     grid-template-columns: 1fr;
     padding: 2rem 1rem;
   }
