@@ -48,11 +48,11 @@ div.carousel div.carousel-slide-overlay {
 
 div.carousel div.carousel-indicators {
   position: absolute;
-  bottom: 1rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   z-index: 20;
 }
 

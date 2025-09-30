@@ -7,15 +7,15 @@ import Carousel from './Carousel.js';
 export default class Website {
   heroCarousel = new Carousel('#hero-carousel');
 
-  init() {
+  #init() {
     this.heroCarousel.init();
   }
 
   static bootstrap() {
-    window.seacom_website = new Website();
+    window.sc_website = new Website();
     window.addEventListener(
       'DOMContentLoaded', 
-      () => window.seacom_website.init()
+      () => window.sc_website.#init()
     );
   }
 }
