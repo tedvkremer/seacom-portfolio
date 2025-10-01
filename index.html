@@ -17,10 +17,10 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="logo-section">
+  <header>
+    <div class="logo-layout">
       <img src="./assets/logo.png" alt="Seasons Computing Logo" class="logo">
-      <div>
+      <div class="company">
         <h1 class="company-name">Seasons Computing</h1>
         <p class="company-tagline">Leadership | Design | Content | Code</p>
       </div>
@@ -36,7 +36,16 @@
               <p>
                 Hi, I'm Ted Kremer. I provide software construction services lending
                 four decades of experience to a clientele of startups, SMBs,
-                and enterprises. I am effective in roles as a technology executive,
+                and enterprises.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-slide-overlay">
+            <div class="hero-contents">
+              <p>
+                I am effective in roles as a technology executive,
                 software architect, full-stack developer, and manager of SDLC functions.
               </p>
             </div>
@@ -54,16 +63,17 @@
         </div>
       </div>
       <div class="carousel-indicators" role="tablist" aria-label="Slide indicators">
-        <button class="carousel-dot" role="tab" aria-label="Go to slide 1"></button>
-        <button class="carousel-dot" role="tab" aria-label="Go to slide 2"></button>
+        <button class="carousel-dot" role="tab" aria-label="1"></button>
+        <button class="carousel-dot" role="tab" aria-label="2"></button>
+        <button class="carousel-dot" role="tab" aria-label="3"></button>
       </div>
     </div>
   </section>
 
-  <main>
+  <main class="layout">
     <section class="story">
       <div class="container">
-        <div class="story-grid">
+        <div class="layout">
           <div class="story-card">
             <div class="story-number">01</div>
             <h3>Origin</h3>
@@ -108,18 +118,20 @@
 
     <section class="contact">
       <div class="container">
-        <div class="contact-header">
-          <p>I am always interested in discussing new opportunities, collaborations, and ideas.
-            Please feel free to reach out via email or phone.</p>
-        </div>
-        <div class="contact-content">
+        <div class="layout">
+          <div class="contact-header">
+            <p>I am always interested in discussing new opportunities, collaborations, and ideas.
+              Please feel free to reach out via email or phone.</p>
+          </div>
           <div class="contact-info">
-            <div class="contact-organization">
+            <div class="logo-layout">
               <img src="./assets/logo.png" alt="Seasons Computing Logo" class="logo">
-              <h1 class="company-name">Seasons Computing</h1>
-              <p class="company-tagline">Leadership | Design | Content | Code</p>
+              <div class="company">
+                <h1 class="company-name">Seasons Computing</h1>
+                <p class="company-tagline">Leadership | Design | Content | Code</p>
+              </div>
             </div>
-            <div class="contact-employee">
+            <div class="contact-layout">
               <div class="contact-signature">
                 Ted V<span class="accent">.</span> Kremer
               </div>
@@ -130,19 +142,19 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="contact-learn-more">
-          <a href="https://docs.google.com/document/u/0/d/1qNdrzS30obdcJR7iNIjhT5dIzTkOJG5JPtICd1T_QyY" target="_blank"
-            class="btn-resume" title="Ted V. Kremer - Learn More">
-            Learn More
-          </a>
+          <div class="contact-learn-more">
+            <a href="https://docs.google.com/document/u/0/d/1qNdrzS30obdcJR7iNIjhT5dIzTkOJG5JPtICd1T_QyY"
+              target="_blank" class="btn-resume" title="Ted V. Kremer - Learn More">
+              Learn More
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-container">
+  <footer>
+    <div class="footer-layout">
       <span class="company-name">Seasons Computing</span>
     </div>
   </footer>

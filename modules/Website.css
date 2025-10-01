@@ -20,7 +20,7 @@
   --sc-hero-gradient-blue: linear-gradient(135deg, rgba(59, 130, 246, 0.7) 0%, rgba(59, 130, 246, 0.9) 30%, #8b5cf6 70%, rgba(236, 72, 153, 0.5) 100%);
   --sc-logo-font-family: 'Varino', sans-serif;
   --sc-main-font-family: 'Comfortaa', cursive;
-  --sc-padding-container: 3.5rem 0;
+  --sc-gap: 3rem;
   --sc-radius-large: 2rem;
   --sc-radius-medium: 1rem;
   --sc-red-color: #f43971;
@@ -31,6 +31,18 @@
   --sc-subtitle-color: #dedede;
   --sc-text-color: #e2e8f0;
   --sc-button-font-family: 'Varino', sans-serif;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --sc-gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sc-gap: 2rem;
+  }
 }
 
 /*************************************
@@ -48,11 +60,12 @@ html {
 }
 
 body {
+  margin-top: var(--sc-gap);
+  display: grid;
+  gap: var(--sc-gap);
   background: rgba(21, 24, 30, 0.95);
   color: var(--sc-text-color);
   font-family: var(--sc-main-font-family);
-  min-height: 100vh;
-  position: relative;
 }
 
 body::before {
@@ -81,42 +94,45 @@ body::before {
 }
 
 p {
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
   line-height: 1.6;
-}
-
-.container {
-  margin: 0 auto;
-  padding: 0 4rem;
-  max-width: 1536px;
 }
 
 /*************************************
   Header
  *************************************/
 
-.header {
-  padding: 2rem 0;
-}
 
-.logo-section {
-  align-items: center;
+.logo-layout {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 0;
+  align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
-.logo {
+@media (max-width: 768px) {
+  .logo-layout {
+    flex-direction: column;
+  }
+}
+
+.logo-layout>.logo {
   height: 6rem;
   padding: 5px;
   width: auto;
 }
 
-.logo:hover {
+.logo-layout>.logo:hover {
   filter: drop-shadow(0 12px 24px rgba(59, 130, 246, 0.5));
   transform: scale(1.1) rotate(5deg);
+}
+
+.logo-layout>.company {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .company-name {
@@ -124,9 +140,9 @@ p {
   background-clip: text;
   color: var(--sc-company-color);
   font-family: var(--sc-logo-font-family);
-  font-size: 2.1rem;
+  font-size: 1.75rem;
+  line-height: 1.1;
   letter-spacing: 2px;
-  line-height: 1.1em;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: var(--sc-shadow-blue);
@@ -136,17 +152,16 @@ p {
 .company-tagline {
   color: var(--sc-subtitle-color);
   font-family: var(--sc-logo-font-family);
-  font-size: 0.8rem;
-  letter-spacing: 5px;
-  padding-left: 3px;
+  font-size: 0.78rem;
+  letter-spacing: 3px;
 }
 
 /*************************************
-  Hero Section
+  Hero
  *************************************/
 
 .hero {
-  height: 17rem;
+  height: 15rem;
 }
 
 .hero .carousel-container {
@@ -155,23 +170,36 @@ p {
 
 .hero-contents {
   max-width: 1024px;
-  margin: 0 4rem 2rem;
+  margin: 0 var(--sc-gap) 2rem;
   text-align: left;
 }
 
 /*************************************
-  Story Section
+  Container & Layout
  *************************************/
 
-.story {
-  padding: var(--sc-padding-container);
-  padding-bottom: 0;
+.container {
+  padding: 0 var(--sc-gap);
 }
 
-.story-grid {
+.layout {
+  width: 100%;
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: 1fr;
+  gap: var(--sc-gap);
+  justify-items: center;
+}
+
+/*************************************
+  Story
+ *************************************/
+
+.story>.container {
+  max-width: 1440px;
+}
+
+.story>.container>.layout {
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
 .story-card {
@@ -182,7 +210,7 @@ p {
     0 20px 40px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  padding: 2.5rem;
+  padding: var(--sc-gap);
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: var(--sc-blur-bg);
@@ -240,7 +268,7 @@ p {
   background: var(--sc-gradient-blue);
   background-clip: text;
   font-family: var(--sc-story-num-font-family);
-  font-size: 3rem;
+  font-size: clamp(2rem, 2rem + 0.5vw, 3rem);
   font-weight: 700;
   letter-spacing: 0;
   margin-bottom: 1.5rem;
@@ -252,7 +280,7 @@ p {
 
 .story-card h3 {
   color: #f1f5f9;
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 1.2rem + 0.5vw, 1.5rem);
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -264,31 +292,11 @@ p {
 }
 
 /*************************************
-  Contact Section
+  Contact
  *************************************/
 
-.contact {
-  padding: var(--sc-padding-container);
-}
-
-.contact .container {
+.contact>.container {
   max-width: 1024px;
-}
-
-.contact-content {
-  align-items: center;
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr;
-  margin: 0 auto;
-  position: relative;
-  text-align: center;
-}
-
-.contact-header {
-  display: flex;
-  justify-content: center;
-  margin: 2rem auto;
 }
 
 .contact-header>p {
@@ -296,73 +304,65 @@ p {
 }
 
 .contact-info {
+  width: 100%;
+  display: grid;
+  gap: var(--sc-gap);
+  padding: var(--sc-gap);
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
   align-items: center;
   background: #0a0a0a33;
   border: var(--sc-border-card);
   border-radius: var(--sc-radius-medium);
   backdrop-filter: var(--sc-blur-bg);
-  display: grid;
-  gap: 2.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  padding: 2.5rem;
-  position: relative;
-
 }
 
-.contact-employee {
-  align-items: center;
+.contact-info>.logo-layout {
+  flex-direction: column;
+}
+
+.contact-info>.logo-layout>.logo {
+  height: 4.5rem;
+}
+
+.contact-info>.logo-layout>.company>.company-name {
+  font-size: 1.65rem;
+}
+
+.contact-info>.logo-layout>.company>.company-tagline {
+  font-size: 0.725rem;
+  letter-spacing: 3px;
+}
+
+.contact-info>.contact-layout {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  overflow: hidden;
+  align-items: center;
+  justify-content: center;
 }
 
-.contact-signature {
+.contact-layout>.contact-signature {
   color: var(--sc-text-color);
   font-family: var(--sc-signature-font-family);
   font-size: 1.65rem;
   font-weight: normal;
 }
 
-.contact-signature>.accent {
+.contact-layout>.contact-signature>.accent {
   color: var(--sc-red-color);
 }
 
-.contact-organization {
-  align-items: center;
+.contact-layout>.contact-item {
   display: flex;
-  flex-direction: column;
-  gap: 0;
-  overflow: hidden;
-}
-
-.contact-organization>.logo {
-  height: 4.5rem;
-  margin: 0;
-}
-
-.contact-organization>.company-name {
-  font-size: 1.4rem;
-}
-
-.contact-organization>.company-tagline {
-  font-size: 0.75rem;
-  letter-spacing: 1.2px;
-  padding-left: 1px;
-}
-
-.contact-item {
   align-items: center;
-  display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 10px;
 }
 
 .contact-item a,
 .contact-item span {
   color: #e0e0e0;
   font-size: 1.2rem;
-  line-height: 1.3;
+  line-height: 1.2rem;
   text-decoration: none;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -381,7 +381,7 @@ p {
 }
 
 .contact-learn-more {
-  margin: 2rem auto;
+  width: 100%;
   text-align: center;
 }
 
@@ -404,6 +404,12 @@ p {
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 425px) {
+  .btn-resume {
+    width: 100%;
+  }
 }
 
 .btn-resume::before {
@@ -433,152 +439,16 @@ p {
   Footer
  *************************************/
 
-.footer-container {
-  align-items: center;
+.footer-layout {
+  width: 100%;
+  text-align: center;
   background: #0a0a0a33;
   border-top: var(--sc-border-card);
   padding: 1.25rem;
-  position: relative;
   backdrop-filter: var(--sc-blur-bg);
-  text-align: center;
-  overflow: hidden;
 }
 
-.footer-container>.company-name {
+.footer-layout>.company-name {
   font-size: 14px;
   letter-spacing: 0;
-}
-
-/*************************************
-  Tablet
- *************************************/
-
-@media (max-width: 1024px) {
-  p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-
-  .container {
-    padding: 0 2rem;
-  }
-
-  .company-name {
-    font-size: 1.75rem;
-  }
-
-  .company-tagline {
-    font-size: 0.75em;
-    letter-spacing: 3.3px;
-  }
-
-  .story-card {
-    padding: 2rem;
-  }
-
-  .story-number {
-    font-size: 2rem;
-  }
-
-  .story-card h3 {
-    font-size: 1.3rem;
-  }
-
-  .contact-item a,
-  .contact-item span {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-  }
-}
-
-/*************************************
-  Mobile
- *************************************/
-
-@media (max-width: 768px) {
-  p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-
-  .hero-contents {
-    margin: -1rem 2rem 2rem;
-  }
-
-  .logo-section {
-    flex-direction: column;
-    gap: 0;
-    text-align: center;
-  }
-
-  .story-number {
-    font-size: 2rem;
-  }
-
-  .story-card h3 {
-    font-size: 1.3rem;
-  }
-
-  .company-name {
-    font-size: 1.5rem;
-    margin-bottom: 2px;
-  }
-
-  .company-tagline {
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-  }
-
-  .contact .container {
-    max-width: 100%;
-  }
-
-  .contact-organization>.company-name {
-    font-size: 1.15rem;
-  }
-
-  .contact-organization>.company-tagline {
-    font-size: 0.637rem;
-    letter-spacing: 1px;
-  }
-
-  .contact-signature {
-    font-size: 1.8rem;
-  }
-
-  .contact-info {
-    gap: 2rem;
-    grid-template-columns: 1fr;
-    padding: 2rem 1rem;
-  }
-
-  .contact-item a,
-  .contact-item span {
-    font-size: 1.05rem;
-    line-height: 1.5rem;
-  }
-}
-
-@media (max-width: 425px) {
-  p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .story-grid {
-    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
-  }
-
-  .container {
-    padding: 0 1rem;
-  }
-
-  .hero-contents {
-    margin: -1.5rem 1.5rem 0;
-    text-align: center;
-  }
-
-  .hero .carousel-indicators {
-    bottom: 1rem !important;
-  }
 }
