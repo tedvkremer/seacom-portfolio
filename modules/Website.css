@@ -308,7 +308,7 @@ p {
   display: grid;
   gap: var(--sc-gap);
   padding: var(--sc-gap);
-  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   align-items: center;
   background: #0a0a0a33;
   border: var(--sc-border-card);
@@ -325,12 +325,12 @@ p {
 }
 
 .contact-info>.logo-layout>.company>.company-name {
-  font-size: 1.65rem;
+  font-size: 1.3rem;
 }
 
 .contact-info>.logo-layout>.company>.company-tagline {
-  font-size: 0.725rem;
-  letter-spacing: 3px;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
 }
 
 .contact-info>.contact-layout {
@@ -361,7 +361,7 @@ p {
 .contact-item a,
 .contact-item span {
   color: #e0e0e0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.2rem;
   text-decoration: none;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
