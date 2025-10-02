@@ -79,3 +79,16 @@ div.carousel button.carousel-dot:focus, button.carousel-dot-active:focus {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
   outline: none;
 }
+
+div.carousel div.carousel-next-slide-countdown {
+  background: #ffffff44;
+  position: absolute;
+  left: 0;
+  z-index: 20;  
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  margin-top: -4px;
+  transition: transform 700ms ease-in-out;
+  will-change: transform;
+}

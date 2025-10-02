@@ -12,10 +12,15 @@ export default class Website {
   }
 
   static bootstrap() {
-    window.sc_website = new Website();
+    if (window._sc_website !== undefined) {
+        console.error("bootstrap() already completed!");
+        return;
+    }
+
+    window._sc_website = new Website();
     window.addEventListener(
       'DOMContentLoaded', 
-      () => window.sc_website.#init()
+      () => window._sc_website.#init()
     );
   }
 }

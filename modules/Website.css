@@ -45,6 +45,12 @@
   }
 }
 
+@media (max-width: 425px) {
+  :root {
+    --sc-gap: 1.5rem;
+  }
+}
+
 /*************************************
   Global Styles
  *************************************/
@@ -173,6 +179,17 @@ p {
   max-width: 1024px;
   margin: 0 var(--sc-gap) 2rem;
   text-align: left;
+}
+
+.hero-contents>p {
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 425px) {
+  .hero-contents {
+    text-align: center;
+  }
 }
 
 /*************************************
