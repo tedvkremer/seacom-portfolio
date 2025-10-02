@@ -140,7 +140,7 @@ p {
   background-clip: text;
   color: var(--sc-company-color);
   font-family: var(--sc-logo-font-family);
-  font-size: 1.75rem;
+  font-size: clamp(1.125rem, calc(1.05rem + 2vw), 1.75rem);
   line-height: 1.1;
   letter-spacing: 2px;
   -webkit-background-clip: text;
@@ -152,8 +152,9 @@ p {
 .company-tagline {
   color: var(--sc-subtitle-color);
   font-family: var(--sc-logo-font-family);
-  font-size: 0.78rem;
+  font-size: clamp(10px, calc(8.556px + 0.5vw), 12.5px);
   letter-spacing: 3px;
+  white-space: nowrap;
 }
 
 /*************************************
@@ -305,6 +306,7 @@ p {
 
 .contact-info {
   width: 100%;
+  overflow: hidden;
   display: grid;
   gap: var(--sc-gap);
   padding: var(--sc-gap);
@@ -361,8 +363,8 @@ p {
 .contact-item a,
 .contact-item span {
   color: #e0e0e0;
-  font-size: 1.1rem;
-  line-height: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.1rem;
   text-decoration: none;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -409,6 +411,7 @@ p {
 @media (max-width: 425px) {
   .btn-resume {
     width: 100%;
+    padding: 1.25rem;
   }
 }
 
