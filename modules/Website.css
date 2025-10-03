@@ -367,10 +367,11 @@ p {
   letter-spacing: 2px;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
   .contact-info>.logo-layout>.company>.company-name {
     font-size: 1.15rem;
   }
+
   .contact-info>.logo-layout>.company>.company-tagline {
     letter-spacing: 1px;
   }
@@ -409,6 +410,14 @@ p {
   text-decoration: none;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .contact-item a,
+  .contact-item span {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
 }
 
 .contact-item a:hover {
