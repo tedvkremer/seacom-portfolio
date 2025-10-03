@@ -66,8 +66,10 @@ html {
 }
 
 body {
+  width: 100%;
   margin-top: var(--sc-gap);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--sc-gap);
   background: rgba(21, 24, 30, 0.95);
   color: var(--sc-text-color);
@@ -197,15 +199,15 @@ p {
  *************************************/
 
 .container {
-  padding: 0 var(--sc-gap);
+  margin: 0 var(--sc-gap);
 }
 
 .layout {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: var(--sc-gap);
-  justify-items: center;
 }
 
 /*************************************
@@ -216,8 +218,18 @@ p {
   max-width: 1440px;
 }
 
-.story>.container>.layout {
+.story-layout {
+  width: 100%;
+  display: grid;
+  gap: var(--sc-gap);
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  align-items: center;
+}
+
+@media (max-width: 425px) {
+  .story-layout {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
 }
 
 .story-card {
@@ -227,6 +239,8 @@ p {
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   padding: var(--sc-gap);
   position: relative;
@@ -323,7 +337,6 @@ p {
 
 .contact-info {
   width: 100%;
-  overflow: hidden;
   display: grid;
   gap: var(--sc-gap);
   padding: var(--sc-gap);
