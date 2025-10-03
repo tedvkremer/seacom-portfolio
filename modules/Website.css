@@ -67,6 +67,7 @@ html {
 
 body {
   width: 100%;
+  min-width: 425px;
   margin-top: var(--sc-gap);
   display: flex;
   flex-direction: column;
@@ -369,10 +370,10 @@ p {
 
 @media (max-width: 768px) {
   .contact-info>.logo-layout>.company>.company-name {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
   .contact-info>.logo-layout>.company>.company-tagline {
-    letter-spacing: 1px;
+    letter-spacing: 0.75px;
   }
 }
 
