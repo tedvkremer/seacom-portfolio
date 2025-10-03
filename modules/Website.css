@@ -21,6 +21,7 @@
   --sc-logo-font-family: 'Varino', sans-serif;
   --sc-main-font-family: 'Comfortaa', cursive;
   --sc-gap: 3rem;
+  --sc-frame: 2rem;
   --sc-radius-large: 2rem;
   --sc-radius-medium: 1rem;
   --sc-red-color: #f43971;
@@ -39,15 +40,10 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
   :root {
-    --sc-gap: 2rem;
-  }
-}
-
-@media (max-width: 375px) {
-  :root {
-    --sc-gap: 1.5rem;
+    --sc-gap: 2.25rem;
+    --sc-frame: 1rem;
   }
 }
 
@@ -66,12 +62,9 @@ html {
 }
 
 body {
-  width: 100%;
-  min-width: 425px;
   margin-top: var(--sc-gap);
-  display: flex;
-  flex-direction: column;
-  gap: var(--sc-gap);
+  width: 100%;
+  max-width: 100vw;
   background: rgba(21, 24, 30, 0.95);
   color: var(--sc-text-color);
   font-family: var(--sc-main-font-family);
@@ -102,6 +95,10 @@ body::before {
   }
 }
 
+header, main, section, footer {
+  width: 100%;
+}
+
 p {
   font-size: clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
   line-height: 1.6;
@@ -115,9 +112,32 @@ p {
 }
 
 /*************************************
-  Header
+  Container & Layout
  *************************************/
 
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sc-gap);
+}
+
+.layout-tight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: calc(100% - (var(--sc-gap) * 2));
+  margin: 0 auto;
+}
+
+/*************************************
+  Header
+ *************************************/
 
 .logo-layout {
   width: 100%;
@@ -143,13 +163,6 @@ p {
 .logo-layout>.logo:hover {
   filter: drop-shadow(0 12px 24px rgba(59, 130, 246, 0.5));
   transform: scale(1.1) rotate(5deg);
-}
-
-.logo-layout>.company {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .company-name {
@@ -198,31 +211,14 @@ p {
 }
 
 /*************************************
-  Container & Layout
- *************************************/
-
-.container {
-  padding: 0 var(--sc-gap);
-}
-
-.layout {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--sc-gap);
-}
-
-/*************************************
   Story
  *************************************/
 
 .story>.container {
-  max-width: 1440px;
+  max-width: calc(1440px - (var(--sc-gap) * 2));
 }
 
 .story-layout {
-  width: 100%;
   display: grid;
   gap: var(--sc-gap);
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -231,7 +227,7 @@ p {
 
 @media (max-width: 425px) {
   .story-layout {
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: 1fr;
   }
 }
 
@@ -245,7 +241,7 @@ p {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  padding: var(--sc-gap);
+  padding: var(--sc-frame);
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: var(--sc-blur-bg);
@@ -331,105 +327,81 @@ p {
  *************************************/
 
 .contact>.container {
-  max-width: 1024px;
+  max-width: calc(1024px - (var(--sc-gap) * 2));
 }
 
 .contact-header>p {
   text-align: center;
 }
 
-.contact-info {
+.contact-card {
   width: 100%;
+  overflow: hidden;
   display: grid;
-  gap: var(--sc-gap);
-  padding: var(--sc-gap);
+  gap: var(--sc-frame);
+  padding: var(--sc-frame);
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  align-items: center;
+  justify-content: center;
   background: #0a0a0a33;
   border: var(--sc-border-card);
   border-radius: var(--sc-radius-medium);
   backdrop-filter: var(--sc-blur-bg);
 }
 
-.contact-info>.logo-layout {
+.contact-card>.logo-layout {
   flex-direction: column;
 }
 
-.contact-info>.logo-layout>.logo {
+.contact-card .logo {
   height: 4.5rem;
 }
 
-.contact-info>.logo-layout>.company>.company-name {
+.contact-card .company-name {
   font-size: 1.3rem;
 }
 
-.contact-info>.logo-layout>.company>.company-tagline {
+.contact-card .company-tagline {
   font-size: 0.62rem;
   letter-spacing: 2px;
 }
 
 @media (max-width: 768px) {
-  .contact-info>.logo-layout>.company>.company-name {
+  .contact-card .company-name {
     font-size: 1.1rem;
   }
-  .contact-info>.logo-layout>.company>.company-tagline {
+
+  .contact-card .company-tagline {
+    font-size: 0.62rem;
     letter-spacing: 0.75px;
   }
 }
 
-.contact-info>.contact-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-layout>.contact-signature {
+.contact-signature {
   color: var(--sc-text-color);
   font-family: var(--sc-signature-font-family);
   font-size: 1.65rem;
   font-weight: normal;
 }
 
-.contact-layout>.contact-signature>.accent {
+.contact-signature>.accent {
   color: var(--sc-red-color);
 }
 
-.contact-layout>.contact-item {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.contact-item a,
-.contact-item span {
+.contact-card a, .contact-card span {
   color: #e0e0e0;
   font-size: 1.1rem;
-  line-height: 1.1rem;
+  line-height: 1.5rem;
   text-decoration: none;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .contact-item a,
-  .contact-item span {
-    font-size: 1rem;
-    line-height: 1rem;
-  }
-}
-
-.contact-item a:hover {
+.contact-card a:hover {
   background: var(--sc-gradient-blue);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: scale(1.05);
-}
-
-.contact-item>.phone {
-  padding: 9px 0 3px;
 }
 
 .contact-learn-more {
@@ -451,18 +423,12 @@ p {
   font-weight: 400;
   letter-spacing: 1px;
   overflow: hidden;
-  padding: 1.25rem 7rem;
+  padding: 1.25rem 15%;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@media (max-width: 425px) {
-  .btn-resume {
-    width: 100%;
-    padding: 1.25rem;
-  }
+  white-space: nowrap;
 }
 
 .btn-resume::before {
@@ -488,16 +454,21 @@ p {
   left: 100%;
 }
 
+@media (max-width: 425px) {
+  .btn-resume {
+    width: 100%;
+  }
+}
+
 /*************************************
   Footer
  *************************************/
 
 .footer-layout {
-  width: 100%;
+  padding: 1.25rem;
   text-align: center;
   background: #0a0a0a33;
   border-top: var(--sc-border-card);
-  padding: 1.25rem;
   backdrop-filter: var(--sc-blur-bg);
 }
 
