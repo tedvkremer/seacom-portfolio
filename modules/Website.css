@@ -39,13 +39,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 425px) {
   :root {
     --sc-gap: 2rem;
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 375px) {
   :root {
     --sc-gap: 1.5rem;
   }
@@ -84,10 +84,10 @@ body::before {
     radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
   content: '';
   height: 100%;
+  width: 100%;
   left: 0;
   position: fixed;
   top: 0;
-  width: 100%;
   z-index: -1;
 }
 
@@ -106,6 +106,13 @@ p {
   line-height: 1.6;
 }
 
+@media (max-width: 425px) {
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+
 /*************************************
   Header
  *************************************/
@@ -113,6 +120,7 @@ p {
 
 .logo-layout {
   width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -188,18 +196,12 @@ p {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 425px) {
-  .hero-contents {
-    text-align: center;
-  }
-}
-
 /*************************************
   Container & Layout
  *************************************/
 
 .container {
-  margin: 0 var(--sc-gap);
+  padding: 0 var(--sc-gap);
 }
 
 .layout {
@@ -365,6 +367,15 @@ p {
   letter-spacing: 2px;
 }
 
+@media (max-width: 425px) {
+  .contact-info>.logo-layout>.company>.company-name {
+    font-size: 1.15rem;
+  }
+  .contact-info>.logo-layout>.company>.company-tagline {
+    letter-spacing: 1px;
+  }
+}
+
 .contact-info>.contact-layout {
   display: flex;
   flex-direction: column;
@@ -393,7 +404,7 @@ p {
 .contact-item a,
 .contact-item span {
   color: #e0e0e0;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.1rem;
   text-decoration: none;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
