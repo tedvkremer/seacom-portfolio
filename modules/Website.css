@@ -20,8 +20,7 @@
   --sc-hero-gradient-blue: linear-gradient(135deg, rgba(59, 130, 246, 0.7) 0%, rgba(59, 130, 246, 0.9) 30%, #8b5cf6 70%, rgba(236, 72, 153, 0.5) 100%);
   --sc-logo-font-family: 'Varino', sans-serif;
   --sc-main-font-family: 'Comfortaa', cursive;
-  --sc-gap: 3rem;
-  --sc-frame: 2rem;
+  --sc-gap: 3.5rem;
   --sc-radius-large: 2rem;
   --sc-radius-medium: 1rem;
   --sc-red-color: #f43971;
@@ -36,14 +35,13 @@
 
 @media (max-width: 1024px) {
   :root {
-    --sc-gap: 2.5rem;
+    --sc-gap: 3rem;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --sc-gap: 2.25rem;
-    --sc-frame: 1rem;
+    --sc-gap: 2.5rem;
   }
 }
 
@@ -59,6 +57,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -141,7 +140,6 @@ p {
 
 .logo-layout {
   width: 100%;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -150,6 +148,7 @@ p {
 
 @media (max-width: 768px) {
   .logo-layout {
+    overflow: hidden;
     flex-direction: column;
   }
 }
@@ -191,12 +190,9 @@ p {
   Hero
  *************************************/
 
-.hero {
-  height: 15rem;
-}
-
-.hero .carousel-container {
+.hero>.carousel {
   background: var(--sc-hero-gradient-blue);
+  height: 13rem;
 }
 
 .hero-contents {
@@ -241,7 +237,7 @@ p {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  padding: var(--sc-frame);
+  padding: var(--sc-gap);
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: var(--sc-blur-bg);
@@ -338,8 +334,8 @@ p {
   width: 100%;
   overflow: hidden;
   display: grid;
-  gap: var(--sc-frame);
-  padding: var(--sc-frame);
+  gap: var(--sc-gap);
+  padding: var(--sc-gap);
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   justify-content: center;
   background: #0a0a0a33;

@@ -48,7 +48,7 @@ div.carousel div.carousel-slide-overlay {
 
 div.carousel div.carousel-indicators {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
