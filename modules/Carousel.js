@@ -7,6 +7,7 @@ const $$ = (selector, node = document) => node.querySelectorAll(selector);
 
 export default class Carousel {
   static DURATION = 8000;
+  
   #id = 0;
   #slides = [];
   #indicators = [];
@@ -20,9 +21,9 @@ export default class Carousel {
 
   init() {
     const carousel = $(this.#id);
-    this.#slides = $$('.carousel-slide', carousel);
+    this.#slides = $$('.CarouselSlide', carousel);
     this.#total = this.#slides.length;
-    this.#indicators = $$('.carousel-indicators>button.carousel-dot', carousel);
+    this.#indicators = $$('.CarouselIndicators>button.CarouselDot', carousel);
     this.#indicators.forEach((indicator, i) =>
       indicator.addEventListener('click', () => this.toSlide(i))
     );
@@ -39,12 +40,12 @@ export default class Carousel {
 
     this.#indicators.forEach((indicator, i) => {
       if (this.#curr === i) {
-        indicator.classList.remove('carousel-dot');
-        indicator.classList.add('carousel-dot-active');
+        indicator.classList.remove('CarouselDot');
+        indicator.classList.add('CarouselDotActive');
         indicator.setAttribute('aria-current', 'true');
       } else {
-        indicator.classList.remove('carousel-dot-active');
-        indicator.classList.add('carousel-dot');
+        indicator.classList.remove('CarouselDotActive');
+        indicator.classList.add('CarouselDot');
         indicator.removeAttribute('aria-current');
       }
     });

@@ -1,17 +1,17 @@
-div.carousel {
+.Carousel {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-div.carousel div.carousel-container {
+.Carousel .CarouselContainer {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-div.carousel div.carousel-slide {
+.Carousel .CarouselSlide {
   position: absolute;
   top: 0;
   left: 0;
@@ -21,19 +21,19 @@ div.carousel div.carousel-slide {
   will-change: transform;
 }
 
-div.carousel div.carousel-slide:nth-child(1) {
+.Carousel .CarouselSlide:nth-child(1) {
   transform: translateX(0%);
 }
 
-div.carousel div.carousel-slide:nth-child(2) {
+.Carousel .CarouselSlide:nth-child(2) {
   transform: translateX(100%);
 }
 
-div.carousel div.carousel-slide:nth-child(3) {
+.Carousel .CarouselSlide:nth-child(3) {
   transform: translateX(100%);
 }
 
-div.carousel div.carousel-slide-overlay {
+.Carousel .CarouselSlideOverlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -46,7 +46,7 @@ div.carousel div.carousel-slide-overlay {
   background-color: transparent;
 }
 
-div.carousel div.carousel-indicators {
+.Carousel .CarouselIndicators {
   position: absolute;
   bottom: 1.5rem;
   left: 50%;
@@ -56,7 +56,7 @@ div.carousel div.carousel-indicators {
   z-index: 20;
 }
 
-div.carousel button.carousel-dot {
+.Carousel .CarouselDot {
   cursor: pointer;
   width: 1rem;
   height: 1rem;
@@ -66,7 +66,7 @@ div.carousel button.carousel-dot {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-div.carousel button.carousel-dot-active {
+.Carousel .CarouselDotActive {
   width: 1rem;
   height: 1rem;
   border-radius: 9999px;
@@ -75,7 +75,7 @@ div.carousel button.carousel-dot-active {
   background-color: white;
 }
 
-div.carousel button.carousel-dot:focus, button.carousel-dot-active:focus {
+.Carousel .CarouselDotActive:focus {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
   outline: none;
 }

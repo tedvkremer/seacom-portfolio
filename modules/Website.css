@@ -114,7 +114,7 @@ p {
   Container & Layout
  *************************************/
 
-.layout {
+.Layout {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,14 +122,14 @@ p {
   gap: var(--sc-gap);
 }
 
-.layout-tight {
+.LayoutTight {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.container {
+.Container {
   width: calc(100% - (var(--sc-gap) * 2));
   margin: 0 auto;
 }
@@ -138,7 +138,7 @@ p {
   Header
  *************************************/
 
-.logo-layout {
+.LogoLayout {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -147,24 +147,24 @@ p {
 }
 
 @media (max-width: 768px) {
-  .logo-layout {
+  .LogoLayout {
     overflow: hidden;
     flex-direction: column;
   }
 }
 
-.logo-layout>.logo {
+.LogoLayout>.Logo {
   height: 6rem;
   padding: 5px;
   width: auto;
 }
 
-.logo-layout>.logo:hover {
+.LogoLayout>.Logo:hover {
   filter: drop-shadow(0 12px 24px rgba(59, 130, 246, 0.5));
   transform: scale(1.1) rotate(5deg);
 }
 
-.company-name {
+.CompanyName {
   background: var(--sc-gradient-blue);
   background-clip: text;
   color: var(--sc-company-color);
@@ -178,7 +178,7 @@ p {
   white-space: nowrap;
 }
 
-.company-tagline {
+.CompanyTagline {
   color: var(--sc-subtitle-color);
   font-family: var(--sc-logo-font-family);
   font-size: clamp(10px, calc(8.556px + 0.5vw), 12.5px);
@@ -190,18 +190,24 @@ p {
   Hero
  *************************************/
 
-.hero>.carousel {
+.Hero>.Carousel {
   background: var(--sc-hero-gradient-blue);
   height: 13rem;
 }
 
-.hero-contents {
+@media (max-width: 425px) {
+  .Hero>.Carousel {
+    height: 14rem;
+  }
+}
+
+.HeroContents {
   max-width: 1024px;
   margin: 0 var(--sc-gap) 2rem;
   text-align: left;
 }
 
-.hero-contents>p {
+.HeroContents>p {
   letter-spacing: 0.5px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -210,11 +216,11 @@ p {
   Story
  *************************************/
 
-.story>.container {
+.Story>.Container {
   max-width: calc(1440px - (var(--sc-gap) * 2));
 }
 
-.story-layout {
+.StoryLayout {
   display: grid;
   gap: var(--sc-gap);
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -222,12 +228,12 @@ p {
 }
 
 @media (max-width: 425px) {
-  .story-layout {
+  .StoryLayout {
     grid-template-columns: 1fr;
   }
 }
 
-.story-card {
+.StoryCard {
   background: var(--sc-bg-card);
   border: var(--sc-border-card);
   border-radius: var(--sc-radius-medium);
@@ -243,7 +249,7 @@ p {
   backdrop-filter: var(--sc-blur-bg);
 }
 
-.story-card::before {
+.StoryCard::before {
   background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
   content: '';
   height: 3px;
@@ -254,7 +260,7 @@ p {
   top: 0;
 }
 
-.story-card::after {
+.StoryCard::after {
   background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.1), transparent);
   content: '';
   height: 200%;
@@ -267,7 +273,7 @@ p {
   width: 200%;
 }
 
-.story-card:hover {
+.StoryCard:hover {
   border-color: rgba(59, 130, 246, 0.3);
   box-shadow:
     0 30px 60px rgba(0, 0, 0, 0.4),
@@ -276,7 +282,7 @@ p {
   transform: translateY(-8px) scale(1.02);
 }
 
-.story-card:hover::after {
+.StoryCard:hover::after {
   animation: shimmer 1.5s ease-in-out;
   opacity: 1;
 }
@@ -291,7 +297,7 @@ p {
   }
 }
 
-.story-number {
+.StoryNumber {
   background: var(--sc-gradient-blue);
   background-clip: text;
   font-family: var(--sc-story-num-font-family);
@@ -305,7 +311,7 @@ p {
   text-shadow: var(--sc-shadow-blue-light);
 }
 
-.story-card h3 {
+.StoryCard h3 {
   color: #f1f5f9;
   font-size: clamp(1.2rem, 1.2rem + 0.5vw, 1.5rem);
   font-weight: 700;
@@ -313,7 +319,7 @@ p {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.story-card p {
+.StoryCard p {
   color: #cbd5e1;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -322,15 +328,15 @@ p {
   Contact
  *************************************/
 
-.contact>.container {
+.Contact>.Container {
   max-width: calc(1024px - (var(--sc-gap) * 2));
 }
 
-.contact-header>p {
+.ContactHeader>p {
   text-align: center;
 }
 
-.contact-card {
+.ContactCard {
   width: 100%;
   overflow: hidden;
   display: grid;
@@ -344,46 +350,46 @@ p {
   backdrop-filter: var(--sc-blur-bg);
 }
 
-.contact-card>.logo-layout {
+.ContactCard>.LogoLayout {
   flex-direction: column;
 }
 
-.contact-card .logo {
+.ContactCard .Logo {
   height: 4.5rem;
 }
 
-.contact-card .company-name {
+.ContactCard .CompanyName {
   font-size: 1.3rem;
 }
 
-.contact-card .company-tagline {
+.ContactCard .CompanyTagline {
   font-size: 0.62rem;
   letter-spacing: 2px;
 }
 
 @media (max-width: 768px) {
-  .contact-card .company-name {
+  .ContactCard .CompanyName {
     font-size: 1.1rem;
   }
 
-  .contact-card .company-tagline {
+  .ContactCard .CompanyTagline {
     font-size: 0.62rem;
     letter-spacing: 0.75px;
   }
 }
 
-.contact-signature {
+.ContactSignature {
   color: var(--sc-text-color);
   font-family: var(--sc-signature-font-family);
   font-size: 1.65rem;
   font-weight: normal;
 }
 
-.contact-signature>.accent {
+.ContactSignature>.Accent {
   color: var(--sc-red-color);
 }
 
-.contact-card a, .contact-card span {
+.ContactCard a, .ContactCard span {
   color: #e0e0e0;
   font-size: 1.1rem;
   line-height: 1.5rem;
@@ -392,7 +398,7 @@ p {
   transition: all 0.3s ease;
 }
 
-.contact-card a:hover {
+.ContactCard a:hover {
   background: var(--sc-gradient-blue);
   background-clip: text;
   -webkit-background-clip: text;
@@ -400,12 +406,12 @@ p {
   transform: scale(1.05);
 }
 
-.contact-learn-more {
+.ContactLearnMore {
   width: 100%;
   text-align: center;
 }
 
-.btn-resume {
+.BtnResume {
   background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
   border-radius: var(--sc-radius-large);
   box-shadow:
@@ -427,7 +433,7 @@ p {
   white-space: nowrap;
 }
 
-.btn-resume::before {
+.BtnResume::before {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   content: '';
   height: 100%;
@@ -438,7 +444,7 @@ p {
   width: 100%;
 }
 
-.btn-resume:hover {
+.BtnResume:hover {
   box-shadow:
     0 15px 40px rgba(59, 130, 246, 0.4),
     0 0 40px rgba(139, 92, 246, 0.3),
@@ -446,12 +452,12 @@ p {
   transform: translateY(-3px);
 }
 
-.btn-resume:hover::before {
+.BtnResume:hover::before {
   left: 100%;
 }
 
 @media (max-width: 425px) {
-  .btn-resume {
+  .BtnResume {
     width: 100%;
   }
 }
@@ -460,7 +466,7 @@ p {
   Footer
  *************************************/
 
-.footer-layout {
+.FooterLayout {
   padding: 1.25rem;
   text-align: center;
   background: #0a0a0a33;
@@ -468,7 +474,7 @@ p {
   backdrop-filter: var(--sc-blur-bg);
 }
 
-.footer-layout>.company-name {
+.FooterLayout>.CompanyName {
   font-size: 14px;
   letter-spacing: 0;
 }
