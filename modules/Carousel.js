@@ -7,7 +7,7 @@ const $$ = (selector, node = document) => node.querySelectorAll(selector);
 
 export default class Carousel {
   static DURATION = 8000;
-  
+
   #id = 0;
   #slides = [];
   #indicators = [];
@@ -27,8 +27,11 @@ export default class Carousel {
     this.#indicators.forEach((indicator, i) =>
       indicator.addEventListener('click', () => this.toSlide(i))
     );
+
     this.#updateCarousel();
     this.startCarousel();
+
+    return this;
   }
 
   #updateCarousel() {
