@@ -18,7 +18,7 @@
   --sc-hero-gradient-blue: linear-gradient(135deg, rgba(59, 130, 246, 0.7) 0%, rgba(59, 130, 246, 0.9) 30%, #8b5cf6 70%, rgba(236, 72, 153, 0.5) 100%);
   --sc-logo-font-family: 'Varino', sans-serif;
   --sc-main-font-family: 'Comfortaa', cursive;
-  --sc-gap: 3.5rem;
+  --sc-gap: 4rem;
   --sc-radius-large: 2rem;
   --sc-radius-medium: 1rem;
   --sc-red-color: #f43971;
@@ -37,15 +37,9 @@
   }
 }
 
-@media (max-width: 768px) {
-  :root {
-    --sc-gap: 2.5rem;
-  }
-}
-
 @media (max-width: 450px) {
   :root {
-    --sc-gap: 2.25rem;
+    --sc-gap: 2rem;
   }
 }
 
@@ -103,16 +97,14 @@ header, main, section, footer {
   width: 100%;
 }
 
-p {
-  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
-  line-height: 1.6;
+h1 {
+  font-size: clamp(1.125rem, calc(1.05rem + 2vw), 1.75rem);
+  line-height: 1.1;
 }
 
-@media (max-width: 425px) {
-  p {
-    font-size: 18px;
-    line-height: 1.5;
-  }
+p {
+  font-size: clamp(1rem, 0.8rem + 1.2vmin, 1.25rem);
+  line-height: 1.6;
 }
 
 /*************************************
@@ -135,7 +127,8 @@ p {
 }
 
 .Container {
-  width: calc(100% - (var(--sc-gap) * 2));
+  max-width: 1440px;
+  padding-inline: var(--sc-gap);
   margin: 0 auto;
 }
 
@@ -153,7 +146,6 @@ p {
 
 @media (max-width: 768px) {
   .LogoLayout {
-    overflow: hidden;
     flex-direction: column;
   }
 }
@@ -174,8 +166,6 @@ p {
   background-clip: text;
   color: var(--sc-company-color);
   font-family: var(--sc-logo-font-family);
-  font-size: clamp(1.125rem, calc(1.05rem + 2vw), 1.75rem);
-  line-height: 1.1;
   letter-spacing: 2px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -211,7 +201,7 @@ p {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   .Hero>.Carousel {
     height: 15.5rem;
   }
@@ -226,17 +216,17 @@ p {
  *************************************/
 
 .Story>.Container {
-  max-width: calc(1440px - (var(--sc-gap) * 2));
+  max-width: 1440px;
 }
 
 .StoryLayout {
   display: grid;
   gap: var(--sc-gap);
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: 1fr 1fr;
   align-items: center;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
   .StoryLayout {
     grid-template-columns: 1fr;
   }
@@ -338,8 +328,13 @@ p {
  *************************************/
 
 .Contact>.Container {
-  width: calc(100% - 2.5rem);
-  max-width: calc(1024px - (var(--sc-gap) * 2));
+  max-width: 1024px;
+}
+
+@media (max-width: 450px) {
+  .Contact>.Container {
+    padding-inline: 1.5rem;
+  }
 }
 
 .ContactHeader>p {
@@ -369,23 +364,12 @@ p {
 }
 
 .ContactCard .CompanyName {
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 1rem + 0.8vw, 1.3rem);
 }
 
 .ContactCard .CompanyTagline {
-  font-size: 0.62rem;
-  letter-spacing: 2px;
-}
-
-@media (max-width: 768px) {
-  .ContactCard .CompanyName {
-    font-size: 1.1rem;
-  }
-
-  .ContactCard .CompanyTagline {
-    font-size: 0.62rem;
-    letter-spacing: 0.75px;
-  }
+  font-size: clamp(0.62rem, 0.6rem + 0.2vw, 0.66rem);
+  letter-spacing: 1.1px;
 }
 
 .ContactSignature {
@@ -435,12 +419,14 @@ p {
   font-weight: 400;
   letter-spacing: 1px;
   overflow: hidden;
-  padding: 1.25rem 15%;
+  padding-block: 1.25rem;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
+  width: 100%;
+  max-width: 400px;
 }
 
 .BtnResume::before {
@@ -466,12 +452,6 @@ p {
   left: 100%;
 }
 
-@media (max-width: 425px) {
-  .BtnResume {
-    width: 100%;
-  }
-}
-
 /*************************************
   Footer
  *************************************/
@@ -486,5 +466,4 @@ p {
 
 .FooterLayout>.CompanyName {
   font-size: 14px;
-  letter-spacing: 0;
 }
