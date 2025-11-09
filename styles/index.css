@@ -5,6 +5,22 @@
   src: url('../assets/Varino-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/Comfortaa-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rock Salt';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/RockSalt-Regular.ttf') format('truetype');
+}
+
 /*************************************
   Design Palette
  *************************************/
