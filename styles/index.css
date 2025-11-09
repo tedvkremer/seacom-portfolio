@@ -1,4 +1,8 @@
-@font-face {
+/*************************************
+  Design Palette
+ *************************************/
+
+ @font-face {
   font-display: swap;
   font-family: 'Varino';
   font-style: normal;
@@ -20,10 +24,6 @@
   font-display: swap;
   src: url('../assets/RockSalt-Regular.ttf') format('truetype');
 }
-
-/*************************************
-  Design Palette
- *************************************/
 
 :root {
   --sc-bg-card: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.6) 100%);
