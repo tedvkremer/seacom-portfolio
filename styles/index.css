@@ -285,6 +285,12 @@ I'm a fan of clamp() as a design tool.
   }
 }
 
+@media (max-width: 450px) {
+  .HeroContents {
+    text-align: center;
+  }
+}
+
 /*************************************
   Story
  *************************************/
