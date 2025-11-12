@@ -82,6 +82,8 @@ body {
   background: rgba(21, 24, 30, 0.95);
   color: var(--sc-text-color);
   font-family: var(--sc-main-font-family);
+  opacity: 0;
+  transition: opacity 150ms ease-in;
 }
 
 body::before {

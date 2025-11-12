@@ -24,5 +24,6 @@ export default class Website {
 
     window._sc_the = new Website();
     window.addEventListener('DOMContentLoaded', () => window._sc_the.#init());
+    window.addEventListener('DOMContentLoaded', () => document.body.style.opacity = "1");
   }
 }
