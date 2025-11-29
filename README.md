@@ -17,7 +17,7 @@ This project is a single-page portfolio website for Ted V. Kremer, operating und
 
 ```
 seacom-portfolio/
-├── architecture.md            
+├── README.md            
 ├── index.html                 # Main HTML entry point
 ├── assets/                    # Static assets
 │   ├── Comfortaa-Regular.ttf

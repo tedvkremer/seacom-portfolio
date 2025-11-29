@@ -6,45 +6,50 @@
   font-display: swap;
   font-family: 'Varino';
   font-style: normal;
-  src: url('../assets/Varino-Regular.ttf') format('truetype');
+  font-weight: 400;
+  src: url('../assets/Varino-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Comfortaa';
   font-style: normal;
-  font-weight: 400;
   font-display: swap;
-  src: url('../assets/Comfortaa-Regular.ttf') format('truetype');
+  font-weight: 400;
+  src: url('../assets/Comfortaa-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Rock Salt';
   font-style: normal;
-  font-weight: 400;
   font-display: swap;
-  src: url('../assets/RockSalt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  src: url('../assets/RockSalt-Regular.woff2') format('woff2');
 }
 
 :root {
-  --sc-bg-card: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.6) 100%);
-  --sc-blur-bg: blur(10px);
-  --sc-border-card: 1px solid rgba(148, 163, 184, 0.1);
   --sc-company-color: #00b0f0;
+  --sc-red-color: #f43971;
+  --sc-subtitle-color: #dedede;
+  --sc-text-color: #e2e8f0;
+
+  --sc-bg-card: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.6) 100%);
+  --sc-border-card: 1px solid rgba(148, 163, 184, 0.1);
+
+  --sc-blur-bg: blur(10px);
   --sc-gradient-blue: linear-gradient(135deg, var(--sc-company-color) 0%, #8b5cf6 50%, #ec4899 100%);
   --sc-hero-gradient-blue: linear-gradient(135deg, rgba(59, 130, 246, 0.7) 0%, rgba(59, 130, 246, 0.9) 30%, #8b5cf6 70%, rgba(236, 72, 153, 0.5) 100%);
-  --sc-logo-font-family: 'Varino', sans-serif;
-  --sc-main-font-family: 'Comfortaa', cursive;
+  --sc-shadow-blue-light: 0 0 20px rgba(59, 130, 246, 0.3);
+  --sc-shadow-blue: 0 0 30px rgba(59, 130, 246, 0.3);
+
   --sc-gap: 4rem;
   --sc-radius-large: 2rem;
   --sc-radius-medium: 1rem;
-  --sc-red-color: #f43971;
-  --sc-shadow-blue-light: 0 0 20px rgba(59, 130, 246, 0.3);
-  --sc-shadow-blue: 0 0 30px rgba(59, 130, 246, 0.3);
+
+  --sc-logo-font-family: 'Varino', ui-sans-serif, system-ui, sans-serif;
+  --sc-main-font-family: 'Comfortaa', ui-sans-serif, system-ui, sans-serif;
   --sc-signature-font-family: 'Rock Salt', cursive;
-  --sc-story-num-font-family: 'Varino', sans-serif;
-  --sc-subtitle-color: #dedede;
-  --sc-text-color: #e2e8f0;
-  --sc-button-font-family: 'Varino', sans-serif;
+  --sc-story-num-font-family: 'Varino', ui-sans-serif, system-ui, sans-serif;
+  --sc-button-font-family: 'Varino', ui-sans-serif, system-ui, sans-serif;
 }
 
 @media (max-width: 1024px) {
@@ -184,6 +189,7 @@ p {
   line-height: 1;
   text-shadow: var(--sc-shadow-blue);
   white-space: nowrap;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
