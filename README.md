@@ -6,6 +6,16 @@ This project is a single-page portfolio website for Ted V. Kremer, operating
 under the brand "Seasons Computing". It showcases professional experience,
 services, and contact information through a modern, responsive web interface.
 
+## Getting Started
+
+1. Serve the repository root with any static server so ES modules and fonts load
+   from the same origin. Examples:
+   - `python3 -m http.server 8000`
+   - `npx serve .`
+2. Open `http://localhost:8000/` to verify the page loads, the hero carousel
+   auto-advances, and the indicator dots respond to clicks. Avoid `file://`
+   since fonts will fail to load due to CORS.
+
 ## Technology Stack
 
 - **Frontend Framework**: Vanilla JavaScript (ES6 Modules)
@@ -30,6 +40,7 @@ seacom-portfolio/
 │   └── Varino-Regular.woff2
 ├── modules/                   # JavaScript modules
 │   ├── Carousel.js
+│   ├── utils.js
 │   └── Website.js
 └── styles/                    # CSS stylesheets
     ├── Carousel.css
@@ -81,6 +92,16 @@ A comprehensive design system built with CSS custom properties:
 - **Performance**: Font preloading and optimized asset loading
 - **Visual Effects**: CSS animations, gradients, and backdrop filters
 
+## Development Notes
+
+- Keep preload `href`s in `index.html` aligned with `@font-face` `src` URLs in
+  `styles/index.css`.
+- CSS variables drive spacing, colors, and typography; tweak them in `:root`
+  and check responsive overrides.
+- If you change carousel markup, keep ARIA roles/labels in sync with
+  `Carousel.js` expectations.
+- No bundler or minifier—keep assets lightweight and paths relative to the root.
+
 ## Data Flow
 
 1. **Initialization**: `Website.bootstrap()` creates the singleton instance
@@ -89,10 +110,25 @@ A comprehensive design system built with CSS custom properties:
    handlers
 4. **Interaction**: User interactions trigger state changes and visual updates
 
+## Testing & QA
+
+There is no automated test suite. Perform a manual pass:
+
+- Load locally and confirm fonts render without console 404s (avoid `file://`).
+- Resize to mobile widths to check layout and carousel controls.
+- Tab through carousel dots and links to ensure focus styles remain visible.
+
 ## Deployment
 
 The application consists of static files that can be served by any web server.
 No server-side processing or build steps are required.
+
+## Contributing Workflow
+
+- Use feature branches and keep changes scoped.
+- Run a local static serve and smoke-test before pushing.
+- Update this README when changing structure, assets, or commands.
+- Default to ASCII and align with existing formatting and comment style.
 
 ## Browser Support
 
